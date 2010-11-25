@@ -3,5 +3,24 @@
 <?xml-stylesheet href="chrome://sierpinski/skin/" type="text/css"?>
 <window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-<sierpinskiTriangle level="3"/>
+<script type="text/javascript">
+var update;
+window.addEventListener('load', function() {
+  var level = document.getElementById('level');
+  var triangle = document.getElementById('triangle');
+  update = function() {
+    triangle.level = level.value;
+  }
+}, true);
+</script>
+
+<hbox>
+  <label value="Level: " />
+  <textbox id="level" type="number" value="3" onchange="update();" />
+</hbox>
+
+<hbox pack="center">
+  <sierpinskiTriangle id="triangle" level="3"/>
+</hbox>
+
 </window>

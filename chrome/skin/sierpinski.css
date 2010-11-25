@@ -1,4 +1,7 @@
 sierpinskiTriangle {
-  background-color : white;
   -moz-binding : url(chrome://sierpinski/content/triangle.xml#triangle)
+}
+
+window {
+  background-color : white;
 }
