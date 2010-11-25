@@ -11,9 +11,9 @@
 
       <method name="update">
       <body><![CDATA[
+        var image = document.getAnonymousElementByAttribute(this, 'anonid', 'image');
+        var recurse = document.getAnonymousElementByAttribute(this, 'anonid', 'recurse');
         if (this.level > 0) {
-          var image = document.getAnonymousElementByAttribute(this, 'anonid', 'image');
-          var recurse = document.getAnonymousElementByAttribute(this, 'anonid', 'recurse');
           var that = this;
           [0,1,2].forEach(function(n) {
             var subTriangle = document.getAnonymousElementByAttribute(that, 'anonid', 't'+n);
@@ -21,6 +21,10 @@
           });
           image.hidden = true;
           recurse.hidden = false;
+        }
+        else {
+          image.hidden = false;
+          recurse.hidden = true;
         }
       ]]></body>
       </method>
