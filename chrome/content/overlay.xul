@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css"   type="text/css"?>
+<overlay id="sierpinskiTriangleOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<script type="text/javascript"><![CDATA[
+function sierpinskiTriangle() {
+  gBrowser.selectedTab = gBrowser.addTab('chrome://sierpinski/content/sierpinski.xul');
+};
+]]></script>
+
+<menupopup id="menu_ToolsPopup">
+  <menuitem oncommand="sierpinskiTriangle();" label="Sierpinski Triangle" />
+</menupopup>
+
+</overlay>

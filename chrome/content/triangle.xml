@@ -1,0 +1,45 @@
+<bindings id="syndicusBindings"
+  xmlns="http://www.mozilla.org/xbl"
+  xmlns:xbl="http://www.mozilla.org/xbl"
+  xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  
+  <binding id="triangle">
+    <implementation>
+      <constructor><![CDATA[
+        if (!isNaN(this.level)) this.update();
+      ]]></constructor>
+
+      <method name="update">
+      <body><![CDATA[
+        if (this.level > 0) {
+          var image = document.getAnonymousElementByAttribute(this, 'anonid', 'image');
+          var recurse = document.getAnonymousElementByAttribute(this, 'anonid', 'recurse');
+          var that = this;
+          [0,1,2].forEach(function(n) {
+            var subTriangle = document.getAnonymousElementByAttribute(that, 'anonid', 't'+n);
+            subTriangle.level = that.level - 1;
+          });
+          image.hidden = true;
+          recurse.hidden = false;
+        }
+      ]]></body>
+      </method>
+
+      <property name="deck"
+                onget="return document.getAnonymousElementByAttribute(this, 'anonid', 'deck');" />
+      <property name="level" 
+                onget="return parseInt(this.getAttribute('level'));" 
+                onset="this.setAttribute('level', val);this.update();"/>
+    </implementation>
+    <content>
+        <xul:image src="chrome://sierpinski/skin/triangle.png" anonid="image" />
+        <xul:vbox anonid="recurse" align="center" hidden="true">
+          <xul:sierpinskiTriangle anonid="t0" />
+          <xul:hbox>
+            <xul:sierpinskiTriangle anonid="t1" />
+            <xul:sierpinskiTriangle anonid="t2" />
+          </xul:hbox>
+        </xul:vbox>
+    </content>
+  </binding>  
+</bindings>

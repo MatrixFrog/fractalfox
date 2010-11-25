@@ -1,0 +1,4 @@
+content sierpinski chrome/content/
+skin sierpinski classic/1.0 chrome/skin/
+
+overlay chrome://browser/content/browser.xul chrome://sierpinski/content/overlay.xul

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="urn:mozilla:install-manifest"
+                   em:id="{e8d4172e-cff6-43e2-903c-562e548a734b}"
+                   em:name="Sierpinski Triangle"
+                   em:version="1.0"
+                   em:creator="Tyler Breisacher"
+                   em:description="Creating the Sierpinski Triangle using XBL and recursion"
+                   em:homepageURL="https://github.com/MatrixFrog">
+    <em:targetApplication>
+      <RDF:Description em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                       em:minVersion="3.6"
+                       em:maxVersion="4.0.*" 
+      />
+    </em:targetApplication>
+  </RDF:Description>
+</RDF:RDF>
